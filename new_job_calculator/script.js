@@ -11,9 +11,9 @@ document.getElementById("calculate").addEventListener("click", function () {
 
 	let unemploymentDays = Math.round((joinDate - leaveDate) / (1000 * 60 * 60 * 24));
 	let dailyLastSalary = lastSalary / 365;
-	let lostEarnings = dailyLastSalary * unemploymentDays;
-	let dailyNewSalary = newSalary / 365;
+	let lostEarnings = Math.round(dailyLastSalary * unemploymentDays);
 
+	let dailyNewSalary = newSalary / 365;
 	if (dailyNewSalary <= dailyLastSalary) {
 		document.getElementById("result").textContent = "New salary must be greater than the last salary.";
 		return;
@@ -42,6 +42,12 @@ document.getElementById("calculate").addEventListener("click", function () {
             <p><strong>Expected Recovery Date:</strong> ${formattedFinalDate}</p>
         </div>
         <div class="comparison">
+            <div class="job-box laid-off">
+                <h3>Laid Off Period</h3>
+                <p><strong>Days Laid Off:</strong> ${unemploymentDays}</p>
+                <p><strong>Daily Amount:</strong> $${Math.round(dailyLastSalary).toLocaleString()}</p>
+                <p><strong>Total Lost Earnings:</strong> $${lostEarnings.toLocaleString()}</p>
+            </div>
             <div class="job-box old-job">
                 <h3>Old Job</h3>
                 <p><strong>From:</strong> ${formattedLeaveDate}</p>

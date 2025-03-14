@@ -58,8 +58,8 @@ document.getElementById("calculate").addEventListener("click", function() {
         You need to buy: <strong>${requiredShares} shares</strong><br>
         Total Cost: <strong>$${formattedRequiredAmount}</strong><br><br>
         <strong>Price Increase Needed:</strong><br>
-        - To match your average cost ($${avgCost.toFixed(2)}): <strong>${increaseToAvg.toFixed(2)}%</strong><br>
-        - To reach target price ($${targetPrice.toFixed(2)}): <strong>${increaseToTarget.toFixed(2)}%</strong>
+        Match average cost ($${avgCost.toFixed(2)}): <strong>${increaseToAvg.toFixed(2)}%</strong><br>
+        Match target price ($${targetPrice.toFixed(2)}): <strong>${increaseToTarget.toFixed(2)}%</strong>
     `;
 
     document.getElementById("result").innerHTML = resultHTML;
